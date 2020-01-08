@@ -9,5 +9,8 @@
 import Foundation
 
 public struct MovieUserMeta: Codable {
+    public init() {
+        self.addedToList = nil
+    }
     public var addedToList: Date?
 }

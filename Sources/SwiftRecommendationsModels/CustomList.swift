@@ -13,4 +13,11 @@ public struct CustomList: Codable, Identifiable {
     public var name: String
     public var cover: Int?
     public var movies: Set<Int>
+    
+    public init(id: Int, name: String, cover: Int?, movies: Set<Int>) {
+        self.id = id
+        self.name = name
+        if let coverParam = cover{ self.cover = coverParam}
+        self.movies = movies
+    }
 }

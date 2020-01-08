@@ -10,11 +10,16 @@ import Foundation
 
 public struct DiscoverFilter: Codable {
     public let year: Int
-    public let startYear: Int?
-    public let endYear: Int?
+    public let startYear: Int? = nil
+    public let endYear: Int? = nil
     public let sort: String
-    public let genre: Int?
-    public let region: String?
+    public let genre: Int? = nil
+    public let region: String? = nil
+    
+    public init(year: Int, startYear: Int?, endYear: Int?, sort: String, genre: Int?, region: String?) {
+        self.year = year
+        self.sort = sort
+    }
     
     public static func randomFilter() -> DiscoverFilter {
         return DiscoverFilter(year: randomYear(),

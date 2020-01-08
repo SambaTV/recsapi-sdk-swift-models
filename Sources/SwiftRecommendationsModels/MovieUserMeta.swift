@@ -9,7 +9,7 @@
 import Foundation
 
 public struct MovieUserMeta: Codable {
-    init(addedToList: Date) {
+    public init(addedToList: Date) {
         self.addedToList = addedToList
     }
     public var addedToList: Date?

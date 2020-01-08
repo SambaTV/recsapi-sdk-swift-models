@@ -9,9 +9,9 @@
 import Foundation
 
 public struct CastResponse: Codable {
-    let id: Int
-    let cast: [People]
-    let crew: [People]
+    public let id: Int
+    public let cast: [People]
+    public let crew: [People]
 }
 
 public let sampleCasts = [People(id: 0,

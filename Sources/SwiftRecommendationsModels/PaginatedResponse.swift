@@ -12,23 +12,12 @@ public struct PaginatedResponse<T: Codable>: Codable {
 }
 
 public struct MoviePaginatedResponse<T: Codable>: Codable {
-    public let results: [T]
-    
-    public enum CodingKeys: String, CodingKey {
-        case results = "movie_results"
-    }
-
-    public init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        results = try values.decode([T].self, forKey: .results)
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(results, forKey: .results)
-    }
-    
+    public let page: Int?
+    public let total_results: Int?
+    public let total_pages: Int?
+    public let movie_results: [T]
 }
+
 
 public struct Paginator: Codable {
     let page: Int

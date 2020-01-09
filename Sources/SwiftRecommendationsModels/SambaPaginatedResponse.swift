@@ -6,8 +6,8 @@
 
 import Foundation
 
-public struct PaginatedResponse<T: Codable>: Codable {
-    public let paginator: Paginator
+public struct SambaPaginatedResponse<T: Codable>: Codable {
+    public let paginator: Paginator?
     public let results: [T]
 }
 

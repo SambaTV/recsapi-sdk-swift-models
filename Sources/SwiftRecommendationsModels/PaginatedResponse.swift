@@ -7,12 +7,12 @@
 import Foundation
 
 public struct PaginatedResponse<T: Codable>: Codable {
-    let paginator: Paginator
-    let results: [T]
+    public let paginator: Paginator
+    public let results: [T]
 }
 
 public struct MoviePaginatedResponse<T: Codable>: Codable {
-    let results: [T]
+    public let results: [T]
     
     public enum CodingKeys: String, CodingKey {
         case results = "movie_results"

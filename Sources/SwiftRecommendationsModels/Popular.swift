@@ -8,15 +8,6 @@
 import Foundation
 
 public struct Popular {
-    public enum CountryCode: String, CaseIterable {
-        case gbr = "GBR"
-        case usa = "USA"
-        case aus = "AUS"
-        case deu = "DEU"
-        case ita = "ITA"
-        case fra = "FRA"
-    }
-
     public enum ContentType: String, CaseIterable {
         case movies = "movies"
         case series = "episodes"
@@ -29,14 +20,15 @@ public struct Popular {
            case fyi
     }
     
-    public init(country: CountryCode?, genres: [SambaGenre]?) {
-        self.country = country
+    public init(country: String?, genres: [SambaGenre]?) {
+        self.isoCountry = country
         self.genres = genres
     }
 
-    public let country: CountryCode?
+    /// Of type isoCountryCode
+    public let isoCountry: String?
     public let genres: [SambaGenre]?
     //let namespace: Namespace?
 }
 
-public let sampleParameter = Popular(country: .gbr, genres: nil)
+public let sampleParameter = Popular(country: "US", genres: nil)

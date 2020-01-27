@@ -21,15 +21,6 @@ public struct DiscoverFilter: Codable {
         self.sort = sort
     }
     
-    public static func randomFilter() -> DiscoverFilter {
-        return DiscoverFilter(year: randomYear(),
-                              startYear: nil,
-                              endYear: nil,
-                              sort: randomSort(),
-                              genre: nil,
-                              region: region)
-    }
-    
     public static func randomFilter(region: String) -> DiscoverFilter {
         return DiscoverFilter(year: randomYear(),
                               startYear: nil,

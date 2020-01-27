@@ -27,7 +27,7 @@ public struct DiscoverFilter: Codable {
                               endYear: nil,
                               sort: randomSort(),
                               genre: nil,
-                              region: nil)
+                              region: region)
     }
     
     public static func randomFilter(region: String) -> DiscoverFilter {

@@ -30,9 +30,18 @@ public struct DiscoverFilter: Codable {
                               region: nil)
     }
     
+    public static func randomFilter(region: String) -> DiscoverFilter {
+        return DiscoverFilter(year: randomYear(),
+                              startYear: nil,
+                              endYear: nil,
+                              sort: randomSort(),
+                              genre: nil,
+                              region: region)
+    }
+    
     public static func randomYear() -> Int {
         let calendar = Calendar.current
-        return Int.random(in: 1950..<calendar.component(.year, from: Date()))
+        return Int.random(in: 2000..<calendar.component(.year, from: Date()))
     }
     
     public static func randomSort() -> String {

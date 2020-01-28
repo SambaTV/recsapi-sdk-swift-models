@@ -23,7 +23,7 @@ public struct DiscoverFilter: Codable {
     }
     
     public static func randomFilter(region: String) -> DiscoverFilter {
-        return DiscoverFilter(year: randomYear(),
+        return DiscoverFilter(year: Calendar.current.component(.year, from: Date()),
                               startYear: nil,
                               endYear: nil,
                               sort: randomSort(),

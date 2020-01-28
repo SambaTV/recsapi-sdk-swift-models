@@ -14,11 +14,12 @@ public struct DiscoverFilter: Codable {
     public let endYear: Int? = nil
     public let sort: String
     public let genre: Int? = nil
-    public let region: String? = nil
+    public let region: String
     
-    public init(year: Int, startYear: Int?, endYear: Int?, sort: String, genre: Int?, region: String?) {
+    public init(year: Int, startYear: Int?, endYear: Int?, sort: String, genre: Int?, region: String) {
         self.year = year
         self.sort = sort
+        self.region = region
     }
     
     public static func randomFilter(region: String) -> DiscoverFilter {
@@ -58,9 +59,8 @@ public struct DiscoverFilter: Codable {
         if let genre = genre {
             params["with_genres"] = "\(genre)"
         }
-        if let region = region {
-            params["region"] = region
-        }
+        
+        params["region"] = region
         params["page"] = "\(DiscoverFilter.randomPage())"
         params["sort_by"] = sort
         params["language"] = "en-US"
@@ -80,9 +80,8 @@ public struct DiscoverFilter: Codable {
             }) {
             text = text + " · \(stateGenre.name)"
         }
-        if let region = region {
-            text = text + " · \(region)"
-        }
+        text = text + " · \(region)"
+        
         return text
     }
 }

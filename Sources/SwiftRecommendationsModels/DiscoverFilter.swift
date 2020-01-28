@@ -33,15 +33,15 @@ public struct DiscoverFilter: Codable {
     
     public static func randomYear() -> Int {
         let calendar = Calendar.current
-        return Int.random(in: 2000..<calendar.component(.year, from: Date()))
+        return calendar.component(.year, from: Date())
     }
     
     public static func randomSort() -> String {
-        let sortBy = ["popularity.desc",
-                      "popularity.asc",
-                      "vote_average.asc",
-                      "vote_average.desc"]
-        return sortBy[Int.random(in: 0..<sortBy.count)]
+//        let sortBy = ["popularity.desc",
+//                      "popularity.asc",
+//                      "vote_average.asc",
+//                      "vote_average.desc"]
+        return "popularity.desc"
     }
     
     public static func randomPage() -> Int {

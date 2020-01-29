@@ -41,7 +41,7 @@ public struct DiscoverFilter: Codable {
 //                      "popularity.asc",
 //                      "vote_average.asc",
 //                      "vote_average.desc"]
-        return "popularity.desc"
+        return "popularity.asc"
     }
     
     public static func randomPage() -> Int {
@@ -57,7 +57,7 @@ public struct DiscoverFilter: Codable {
             params["year"] = "\(year)"
         }
         if let genre = genre {
-            params["with_genres"] = "\(genre)"
+            params["with_genres"] = "28,12,35,18,10749,10770,10752"
         }
         
         params["region"] = region
